@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import useSiteMetadata from '../hooks/useSiteMetadata';
 import styled from 'styled-components';
 import rhino from '../images/rhino.png';
@@ -88,12 +89,19 @@ const StyledHeader = styled.header.attrs({
   }
 `;
 
-const Header = () => {
-  const { title } = useSiteMetadata();
+const Header = ({ location }) => {
+  const { pathname } = location;
+  const { author } = useSiteMetadata();
   return (
     <StyledHeader>
       <div className='logo'>
-        <h1>{title}</h1>
+        <Link to='/'>
+          <h1>
+            {pathname === '/'
+              ? `${author} | Web Developer`
+              : `${author} | Bullets`}
+          </h1>
+        </Link>
       </div>
     </StyledHeader>
   );

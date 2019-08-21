@@ -68,16 +68,24 @@ const StyledMainNav = styled.nav`
   }
 `;
 
-const MainNav = () => {
-  const navItems = ['bio', 'conduct', 'tools', 'portfolio', 'contact'];
+const MainNav = ({ location }) => {
+  const { pathname } = location;
+  const navItems = ['bio', 'tools', 'portfolio', 'contact'];
   const nav = navItems.map((item, i) => (
     <li key={i}>
-      <Link to={`#{item}`}>{item}</Link>
+      <Link to={`#${item}`}>{item}</Link>
     </li>
   ));
   return (
     <StyledMainNav>
-      <ul className='list-flex'>{nav}</ul>
+      <ul className='list-flex'>
+        {nav}
+        <li>
+          <Link to={pathname === '/' ? '/blog' : '/'}>
+            {pathname === '/' ? 'blog' : 'home'}
+          </Link>
+        </li>
+      </ul>
       <section className='contact'>
         <div>
           <p>Thanks for checking out my site!</p>

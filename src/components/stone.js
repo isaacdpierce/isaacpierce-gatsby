@@ -3,14 +3,14 @@ import ContentSection from '../themes/contentSection';
 import styled from 'styled-components';
 import texture from '../images/redox-01.png';
 
-const StyledQuestion = styled.div`
+const StyledStone = styled.div`
   background: rgb(49, 49, 49);
   border-radius: 5px;
   height: 100%;
   width: 95%;
   transform: translateX(5px);
 
-  .question {
+  .stone {
     width: 100%;
     margin: 0;
     padding: 5rem 6rem;
@@ -25,7 +25,7 @@ const StyledQuestion = styled.div`
     box-shadow: 0px 2px 3px 2px #00000033;
   }
 
-  .question h3 {
+  .stone * {
     font-weight: bold;
     font-size: 2.5rem;
     color: rgba(0, 0, 0, 0.74);
@@ -33,14 +33,12 @@ const StyledQuestion = styled.div`
   }
 `;
 
-const Question = ({ text }) => (
+const Stone = ({ children }) => (
   <ContentSection>
-    <StyledQuestion>
-      <div className='question'>
-        <h3>{text}</h3>
-      </div>
-    </StyledQuestion>
+    <StyledStone>
+      <div className='stone'>{children}</div>
+    </StyledStone>
   </ContentSection>
 );
 
-export default Question;
+export default Stone;

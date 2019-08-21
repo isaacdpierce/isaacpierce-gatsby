@@ -1,7 +1,7 @@
 import React from 'react';
 import Statement from './statement';
 import HappyList from './happyList';
-import Question from './question';
+import Stone from './stone';
 import MiniBio from './miniBio';
 import Conduct from './conduct';
 import Tools from './tools';
@@ -13,7 +13,7 @@ const Content = () => (
   <>
     <Statement words='builds strong code.' />
     <HappyList />
-    <Question text='What kind of person do you want to work with?' />
+    <Stone>What kind of person do you want to work with?</Stone>
     <MiniBio />
     <Statement words='Lives by the code.' />
     <Conduct />
@@ -39,10 +39,10 @@ const Content = () => (
       title='Honing new tools'
       types={['gatsby', 'graphql', 'meteor', 'typescript', 'docker']}
     />
-    <Question
-      text=' How will the person you hire now be contributing to the success of
-            your company in 5 years from now?'
-    />
+    <Stone>
+      How will the person you hire now be contributing to the success of your
+      company in 5 years from now?
+    </Stone>
     <Goals />
     <Portfolio />
     <Interests />
