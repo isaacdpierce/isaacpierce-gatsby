@@ -1,0 +1,139 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body * {
+  color: #d3d3d3;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: 'Fira Sans', sans-serif;
+  letter-spacing: 0.25rem;
+  text-shadow: 1px 1px 2px black;
+  font-weight: 100;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  letter-spacing: 1rem;
+  padding-left: 0.75rem;
+}
+
+h6 {
+  color: #547682;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  min-width: 330px;
+}
+
+li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #b37519;
+  font-weight: 200;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #df9220;
+}
+
+a:focus {
+  color: #f29f22;
+}
+
+p {
+  line-height: 120%;
+  max-width: 50rem;
+}
+
+figcaption {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+cite {
+  display: inline-block;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.main__bg {
+  background: rgb(26, 24, 23) url('../images/rhino.png') no-repeat;
+  background-position: right;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container__content {
+  grid-column: 2 / span 6;
+  grid-row: 1 / -1;
+}
+
+.interests {
+  margin-bottom: 80vh;
+}
+
+@media only screen and (max-width: 1300px) {
+  .container__content {
+    grid-column: 2 / span 6;
+    min-width: 350px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body * {
+    text-shadow: 2px 2px 12px black;
+    letter-spacing: 0.15rem;
+    font-size: 1.5rem;
+  }
+
+  .main__bg {
+    background: url('../images/rhino-small.png') no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-size: cover;
+    min-width: 351px;
+  }
+
+  h2 {
+    font-size: 6rem;
+  }
+
+  .container__content {
+    grid-column: 1 / 13;
+    background-color: rgba(0, 0, 0, 0.201);
+  }
+
+  .darken-bg {
+    background-color: rgba(0, 0, 0, 0.201);
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container__content {
+    background-color: rgba(0, 0, 0, 0.475);
+  }
+  .darken-bg {
+    background-color: rgba(0, 0, 0, 0.53);
+  }
+}

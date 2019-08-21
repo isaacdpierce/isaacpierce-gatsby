@@ -1,0 +1,44 @@
+{
+  "name": "isaac-pierce-website",
+  "private": true,
+  "description": "Portfolio and contact information.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.13.67",
+    "gatsby-plugin-styled-components": "^3.1.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2",
+    "typeface-fira-mono": "0.0.72",
+    "typeface-fira-sans": "0.0.75"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-react-app": "^5.0.1",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
