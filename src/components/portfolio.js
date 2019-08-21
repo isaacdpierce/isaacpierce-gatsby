@@ -9,7 +9,8 @@ const StyledPortfolio = styled.div`
     margin: 0;
     margin-bottom: 5rem;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.495);
+    background-color: rgba(0, 0, 0, 0.895);
+    border-radius: 3px;
   }
 
   .slide__image {
