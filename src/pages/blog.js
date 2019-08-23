@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import BlogIntro from '../components/blogIntro';
+import PostList from '../components/postList';
 
 const StyledBlogContainer = styled.div`
   color: white;
@@ -13,27 +14,13 @@ const StyledBlogContainer = styled.div`
 `;
 
 // eslint-disable-next-line
-export default props => (
-  <Layout location={props.location}>
-    <StyledBlogContainer>
-      <BlogIntro />
-      <h1>BULLETS</h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nulla
-      perspiciatis provident eum blanditiis vero repellat eligendi dolores
-      recusandae, dolore reiciendis eaque labore quaerat esse a possimus unde
-      quidem beatae? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Rem nulla perspiciatis provident eum blanditiis vero repellat eligendi
-      dolores recusandae, dolore reiciendis eaque labore quaerat esse a possimus
-      unde quidem beatae? Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Rem nulla perspiciatis provident eum blanditiis vero repellat
-      eligendi dolores recusandae, dolore reiciendis eaque labore quaerat esse a
-      possimus unde quidem beatae? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Rem nulla perspiciatis provident eum blanditiis vero
-      repellat eligendi dolores recusandae, dolore reiciendis eaque labore
-      quaerat esse a possimus unde quidem beatae? Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Rem nulla perspiciatis provident eum
-      blanditiis vero repellat eligendi dolores recusandae, dolore reiciendis
-      eaque labore quaerat esse a possimus unde quidem beatae?
-    </StyledBlogContainer>
-  </Layout>
-);
+export default ({ location }) => {
+  return (
+    <Layout location={location}>
+      <StyledBlogContainer>
+        <BlogIntro />
+        <PostList />
+      </StyledBlogContainer>
+    </Layout>
+  );
+};

@@ -8,6 +8,7 @@ const useSiteMetadata = () => {
           siteMetadata {
             title
             author
+            navItems
             # siteUrl
             # headline
             # description

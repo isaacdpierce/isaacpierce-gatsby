@@ -2,7 +2,7 @@ import React from 'react';
 import ContentSection from '../themes/contentSection';
 
 const Interests = () => (
-  <ContentSection className='interests  darken-bg'>
+  <ContentSection className='mb-lg  darken-bg'>
     <h6>Other things I love almost as much as coding</h6>
     <p>Silence.</p>
     <p>

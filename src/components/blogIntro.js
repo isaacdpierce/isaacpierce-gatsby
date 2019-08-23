@@ -16,6 +16,6 @@ export default () => (
     <h1>Welcome.</h1>
     <h6>If you love:</h6>
     <p>Saving time. Cutting to the chase. Bullet points.</p>
-    <h6>Bullets blog is for you.</h6>
+    <h6>DevBullets is for you.</h6>
   </StyledBlogIntro>
 );

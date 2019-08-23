@@ -89,18 +89,13 @@ const StyledHeader = styled.header.attrs({
   }
 `;
 
-const Header = ({ location }) => {
-  const { pathname } = location;
+const Header = () => {
   const { author } = useSiteMetadata();
   return (
     <StyledHeader>
       <div className='logo'>
         <Link to='/'>
-          <h1>
-            {pathname === '/'
-              ? `${author} | Web Developer`
-              : `${author} | Bullets`}
-          </h1>
+          <h1>{`${author} | Web Developer`}</h1>
         </Link>
       </div>
     </StyledHeader>

@@ -25,18 +25,22 @@ const StyledStone = styled.div`
     box-shadow: 0px 2px 3px 2px #00000033;
   }
 
-  .stone * {
+  .engraving {
+    margin: 0;
     font-weight: bold;
     font-size: 2.5rem;
     color: rgba(0, 0, 0, 0.74);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.233);
+    text-transform: uppercase;
   }
 `;
 
 const Stone = ({ children }) => (
   <ContentSection>
     <StyledStone>
-      <div className='stone'>{children}</div>
+      <div className='stone'>
+        <p className='engraving'>{children}</p>
+      </div>
     </StyledStone>
   </ContentSection>
 );

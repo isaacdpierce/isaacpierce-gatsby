@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { Location } from '@reach/router';
 import StyledSocialIcon from '../themes/styledSocialIcon';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 import icons from '../images/icons/social';
 import styled from 'styled-components';
 
-const StyledMainNav = styled.nav`
+const StyledMainNav = styled.nav.attrs({ className: 'nav' })`
   align-items: center;
   background: #1d1a19;
   display: flex;
@@ -16,6 +18,12 @@ const StyledMainNav = styled.nav`
   text-align: center;
   top: 94vh;
   z-index: 99;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    min-width: 330px;
+  }
 
   .list-flex {
     width: 100%;
@@ -68,23 +76,24 @@ const StyledMainNav = styled.nav`
   }
 `;
 
-const MainNav = ({ location }) => {
-  const { pathname } = location;
-  const navItems = ['bio', 'tools', 'portfolio', 'contact'];
+const MainNav = () => {
+  const { navItems } = useSiteMetadata();
   const nav = navItems.map((item, i) => (
     <li key={i}>
       <Link to={`#${item}`}>{item}</Link>
     </li>
   ));
+  const pageLink = (
+    <li>
+      <Link to='/blog'>Blog</Link>
+    </li>
+  );
+
   return (
     <StyledMainNav>
       <ul className='list-flex'>
         {nav}
-        <li>
-          <Link to={pathname === '/' ? '/blog' : '/'}>
-            {pathname === '/' ? 'blog' : 'home'}
-          </Link>
-        </li>
+        {pageLink}
       </ul>
       <section className='contact'>
         <div>

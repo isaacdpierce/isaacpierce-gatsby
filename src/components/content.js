@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Statement from './statement';
 import HappyList from './happyList';
 import Stone from './stone';
@@ -9,8 +10,17 @@ import Goals from './goals';
 import Portfolio from './portfolio';
 import Interests from './interests';
 
+const StyledContent = styled.div`
+  li {
+    list-style: none;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+`;
 const Content = () => (
-  <>
+  <StyledContent>
     <Statement words='builds strong code.' />
     <HappyList />
     <Stone>What kind of person do you want to work with?</Stone>
@@ -48,7 +58,7 @@ const Content = () => (
     <Interests />
     {/* This is an anchor to get the contact menu to fully open at the bottom of the page for autoscroll */}
     <p id='contact' />
-  </>
+  </StyledContent>
 );
 
 export default Content;
