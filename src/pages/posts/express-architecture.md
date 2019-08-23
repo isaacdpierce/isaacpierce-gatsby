@@ -14,12 +14,12 @@ date: '2019-08-19'
 
 Express combines middleware to modify request data
 
-express() - is the top-level function that creates the Express app and allows access to the 4 Express objects
+`express()` - is the top-level function that creates the Express application and allows access to the 4 Express objects:
 
-1. _Application_ - app - Exposes the methods to handle HTTP requests, allows configuration of middleware and much more.
-2. _Request_ - req - An object with properties describing the request from a client (url, domain, host, port, headers, body, etc. ) - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Request).
-3. _Response_ - res - An object with properties describing the response sent to a client from the server -> It includes methods for handling routing, setting the status/headers and formatting the response. - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Response)
-4. _Router_ - Creates modular route handlers. Referred to as a mini-app.[LINK-TO-ROUTER-POST]
+1. _Application_ - `app` - Exposes the methods to handle HTTP requests, allows configuration of middleware and much more.
+2. _Request_ - `req` - An object with properties describing the request from a client (url, domain, host, port, headers, body, etc. ) - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Request).
+3. _Response_ - `res` - An object with properties describing the response sent to a client from the server -> It includes methods for handling routing, setting the status/headers and formatting the response. - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+4. _Router_ - Creates modular route handlers. Referred to as a mini-app. [More](https://www.isaacpierce.io/express-router/)
 
 **Response Methods:**
 
@@ -33,7 +33,7 @@ express() - is the top-level function that creates the Express app and allows ac
 - `res.sendFile()`
 - `res.sendStatus()`
 
-###### SETUP
+###### Express SETUP
 
 1. create a new project directory
 2. inside new directory -> `npm init`
@@ -59,7 +59,7 @@ express() - is the top-level function that creates the Express app and allows ac
 
    ```js
    app.get('/', (req, res) => {
-     res.send('Hello World.');
+     res.send('Hello World!');
    });
    ```
 
@@ -71,7 +71,7 @@ express() - is the top-level function that creates the Express app and allows ac
    });
    ```
 
-10. `npm start`
+10. `npm start` - Go to localhost:8000 to see 'Hello World!"
 
 The complete app.js looks like this:
 

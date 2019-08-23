@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import useSiteMetadata from '../hooks/useSiteMetadata';
+import { Location } from '@reach/router';
 import styled from 'styled-components';
 import rhino from '../images/rhino.png';
 import rhinoSmall from '../images/rhino-small.png';
 
+// TODO - get props out and render location base on home page
 const StyledHeader = styled.header.attrs({
   className: 'container__logo',
   role: 'banner',
@@ -15,13 +17,13 @@ const StyledHeader = styled.header.attrs({
   background-size: cover;
   padding-bottom: 1rem;
   position: sticky;
-  top: -39vh;
+  top: ${props => (props.root ? -39 : 0)};
   z-index: 99;
 
   :before {
     content: '';
     display: block;
-    height: 52vh;
+    height: ${props => (props.root ? 52 : 9)}vh;
     width: 100%;
     margin-bottom: -3rem;
   }
@@ -91,15 +93,29 @@ const StyledHeader = styled.header.attrs({
 
 const Header = () => {
   const { author } = useSiteMetadata();
-  return (
-    <StyledHeader>
-      <div className='logo'>
-        <Link to='/'>
-          <h1>{`${author} | Web Developer`}</h1>
-        </Link>
-      </div>
-    </StyledHeader>
+  const title = (
+    <Location>
+      {({ location }) => {
+        const path = location.pathname;
+        const root = path === '/';
+        console.log(root);
+
+        const subtitle = path === '/' ? 'Web Developer' : 'Devbullets';
+        return (
+          <StyledHeader root={root}>
+            <div className='logo'>
+              {' '}
+              <Link to='/'>
+                <h1>{`${author} | ${subtitle}`}</h1>
+              </Link>
+            </div>
+          </StyledHeader>
+        );
+      }}
+    </Location>
   );
+
+  return title;
 };
 
 export default Header;

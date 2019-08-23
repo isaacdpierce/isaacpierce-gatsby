@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Location } from '@reach/router';
 import StyledSocialIcon from '../themes/styledSocialIcon';
 import useSiteMetadata from '../hooks/useSiteMetadata';
 import icons from '../images/icons/social';
@@ -80,21 +79,13 @@ const MainNav = () => {
   const { navItems } = useSiteMetadata();
   const nav = navItems.map((item, i) => (
     <li key={i}>
-      <Link to={`#${item}`}>{item}</Link>
+      <Link to={item === 'blog' ? `/${item}` : `#${item}`}>{item}</Link>
     </li>
   ));
-  const pageLink = (
-    <li>
-      <Link to='/blog'>Blog</Link>
-    </li>
-  );
 
   return (
     <StyledMainNav>
-      <ul className='list-flex'>
-        {nav}
-        {pageLink}
-      </ul>
+      <ul className='list-flex'>{nav}</ul>
       <section className='contact'>
         <div>
           <p>Thanks for checking out my site!</p>

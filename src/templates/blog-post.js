@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import ContentSection from '../themes/contentSection';
 import styled from 'styled-components';
 import bullet from '../images/bullet-white.svg';
 
 const StyledPost = styled.article`
+  padding: 5rem 0;
+  transform: translateY(-60rem);
   strong {
     color: #7696a2;
     display: inline-block;
@@ -18,7 +19,7 @@ const StyledPost = styled.article`
   }
   ul,
   ol {
-    margin: 0;
+    margin-bottom: 5rem;
   }
 
   li {
@@ -26,11 +27,19 @@ const StyledPost = styled.article`
     line-height: 150%;
   }
 
-  li :before {
+  ul li {
+    list-style: none;
+  }
+
+  ul li:before {
     content: '';
     background-image: url(${bullet});
-    height: 20px;
-    width: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-12px, -3px);
+    height: 6px;
+    width: 12px;
+    display: inline-block;
     z-index: 99;
   }
 `;
@@ -40,10 +49,10 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <ContentSection className='mb-xlg darken-bg'>
+      <StyledPost className='mb-xlg darken-bg'>
         <h6>{post.frontmatter.title}</h6>
-        <StyledPost dangerouslySetInnerHTML={{ __html: post.html }} />
-      </ContentSection>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </StyledPost>
     </Layout>
   );
 };

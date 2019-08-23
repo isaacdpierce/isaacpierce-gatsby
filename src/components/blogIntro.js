@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledBlogIntro = styled.section`
-  padding-bottom: 20rem;
+  transform: translateY(-50vh);
   h1 {
     font-weight: 500;
     color: #b37519;
-    margin-bottom: 21rem;
+    margin-bottom: 12rem;
   }
 `;
 

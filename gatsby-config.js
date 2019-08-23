@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Isaac Pierce | Web Developer',
     author: 'Isaac Pierce',
-    navItems: ['bio', 'tools', 'portfolio', 'contact'],
+    navItems: ['bio', 'tools', 'portfolio', 'contact', 'blog'],
   },
   plugins: [
     'gatsby-plugin-styled-components',
