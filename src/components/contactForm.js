@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledContactForm = styled.form`
@@ -39,30 +39,72 @@ const StyledContactForm = styled.form`
   }
 `;
 
+const encode = data =>
+  Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+
 const ContactForm = () => {
   const botLabel = `Don’t fill this out if you're human`;
+  const [state, setState] = useState({
+    email: '',
+    message: '',
+  });
+
+  const handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...state }),
+    })
+      .then(() =>
+        alert(
+          'Your message is sent. Thanks for reaching out. I will respond soon!'
+        )
+      )
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
+  const handleChange = e => {
+    setState({ [e.target.name]: e.target.value });
+    console.log(state);
+  };
 
   return (
     <StyledContactForm
+      onSubmit={handleSubmit}
       method='POST'
       name='form-name'
       value='contact'
       netlify-honeypot='bot-field'
       data-netlify='true'
     >
-      <p class='bot-hidden' aria-label={botLabel}>
+      <p className='bot-hidden' aria-label={botLabel}>
         <label>
           {botLabel} <input name='bot-field' />
         </label>
       </p>
       <p>
         <label>
-          Email: <input type='text' name='email' />
+          Email:{' '}
+          <input
+            type='email'
+            name='email'
+            value={state.email}
+            onChange={handleChange}
+          />
         </label>
       </p>
       <p>
         <label>
-          Message: <textarea name='message'></textarea>
+          Message:{' '}
+          <textarea
+            name='message'
+            value={state.message}
+            onChange={handleChange}
+          ></textarea>
         </label>
       </p>
       <p>
