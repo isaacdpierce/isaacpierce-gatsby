@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import ContactForm from './contactForm';
 import StyledSocialIcon from '../themes/styledSocialIcon';
 import useSiteMetadata from '../hooks/useSiteMetadata';
 import icons from '../images/icons/social';
@@ -87,10 +88,8 @@ const MainNav = () => {
     <StyledMainNav>
       <ul className='list-flex'>{nav}</ul>
       <section className='contact'>
-        <div>
-          <p>Thanks for checking out my site!</p>
-          <p>Contact me anytime.</p>
-        </div>
+        <p>Thanks for checking out my site.</p>
+        <p>Contact me anytime.</p>
         <p className='contact__tag'>
           email:
           <a href='mailto:hello@isaacpierce.io' rel='noopener noreferrer'>
@@ -98,8 +97,6 @@ const MainNav = () => {
             hello@isaacpierce.io
           </a>
         </p>
-        <p>or</p>
-        <p>Have a peek at my profiles.</p>
 
         <div className='icons'>
           <a
@@ -124,6 +121,7 @@ const MainNav = () => {
             <StyledSocialIcon src={icons.linkedin} alt='LinkedIn icon' />
           </a>
         </div>
+        <ContactForm />
       </section>
       <section className='copyright'>
         Copyright &copy;2019 Built by Isaac Pierce

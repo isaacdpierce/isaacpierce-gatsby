@@ -17,7 +17,7 @@ const StyledHeader = styled.header.attrs({
   background-size: cover;
   padding-bottom: 1rem;
   position: sticky;
-  top: ${props => (props.root ? -39 : 0)};
+  top: ${props => (props.root ? -39 : 0)}vh;
   z-index: 99;
 
   :before {
