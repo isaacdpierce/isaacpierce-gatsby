@@ -25,6 +25,10 @@ const StyledMainNav = styled.nav.attrs({ className: 'nav' })`
     min-width: 330px;
   }
 
+  .icons {
+    margin-bottom: 2rem;
+  }
+
   .list-flex {
     width: 100%;
     max-width: 95vw;
@@ -44,6 +48,7 @@ const StyledMainNav = styled.nav.attrs({ className: 'nav' })`
 
   .contact {
     height: 100%;
+    margin-top: 2rem;
   }
 
   .contact a {

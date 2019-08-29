@@ -13,6 +13,12 @@ const StyledContactForm = styled.form`
   button {
     border-radius: 3px;
     border: black;
+    text-shadow: none;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+  }
+  p {
+    margin: 1rem;
   }
   input,
   textarea {
