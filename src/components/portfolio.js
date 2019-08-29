@@ -146,8 +146,8 @@ const Portfolio = () => (
           />
         </a>
         <figcaption>
-          I built this quiz app to get a stronger understanding of DOM event
-          handling and accessible form inputs.
+          A quiz app to get a stronger understanding of DOM event handling and
+          accessible form inputs.
           <br />
           <hr />
           HTML + CSS + Javascript + jQuery
@@ -183,11 +183,11 @@ const Portfolio = () => (
           />
         </a>
         <figcaption>
-          I built this SPA to learn more about React and play with some React
-          animation libraries.
+          A SPA to learn more about React and play with some React animation
+          libraries.
           <br />
           <hr />
-          Create-react-app + React + JSX + React animation libraries
+          React + React animation libraries
         </figcaption>
         <div className='slide__linkbox'>
           <a

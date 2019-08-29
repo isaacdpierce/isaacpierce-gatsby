@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledContactForm = styled.form`
+  text-align: left;
   &,
   label {
     display: flex;
@@ -16,6 +17,10 @@ const StyledContactForm = styled.form`
     text-shadow: none;
     font-weight: 300;
     padding: 0.5rem 1rem;
+  }
+
+  label {
+    text-transform: uppercase;
   }
   p {
     margin: 1rem;
