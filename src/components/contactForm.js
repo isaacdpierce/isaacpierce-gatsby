@@ -27,14 +27,15 @@ const StyledContactForm = styled.form`
     background-color: #181413;
     padding: 1rem 2rem;
     transition: background-color 0.5s ease-in-out;
+    box-shadow: 0 1px 1px 1px #0c0c0c;
     :hover {
       background-color: #211c1a;
     }
     :active {
-      background-color: #111111;
+      background-color: #111;
     }
   }
-  .bot-hidden {
+  .hidden {
     display: none;
   }
 `;
@@ -75,13 +76,14 @@ const ContactForm = () => {
   return (
     <StyledContactForm
       onSubmit={handleSubmit}
+      name='contact'
       method='POST'
-      name='form-name'
       value='contact'
       netlify-honeypot='bot-field'
       data-netlify='true'
     >
-      <p className='bot-hidden' aria-label={botLabel}>
+      <input type='hidden' name='form-name' value='contact' />
+      <p className='hidden' aria-label={botLabel}>
         <label>
           {botLabel} <input name='bot-field' />
         </label>

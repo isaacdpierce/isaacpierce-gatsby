@@ -91,7 +91,6 @@ const MainNav = () => {
         <p>Thanks for checking out my site.</p>
         <p>Contact me anytime.</p>
         <p className='contact__tag'>
-          email:
           <a href='mailto:hello@isaacpierce.io' rel='noopener noreferrer'>
             {' '}
             hello@isaacpierce.io
