@@ -1,10 +1,11 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import bullet from '../images/bullet-white.svg';
 
-const StyledPost = styled.article`
+const StyledPost = styled(animated.article)`
   padding: 5rem 0;
   transform: translateY(-60rem);
   strong {
@@ -47,9 +48,10 @@ const StyledPost = styled.article`
 // eslint-disable-next-line
 export default ({ data }) => {
   const post = data.markdownRemark;
+  const fadeIn = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 500 });
   return (
     <Layout>
-      <StyledPost className='mb-xlg darken-bg'>
+      <StyledPost className='mb-xlg darken-bg' style={fadeIn}>
         <h6>{post.frontmatter.title}</h6>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </StyledPost>

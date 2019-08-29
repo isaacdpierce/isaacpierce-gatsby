@@ -103,4 +103,4 @@ const removeXSSAttacks = html => {
 
 - [Wes Bos](https://wesbos.com/sanitize-html-es6-template-strings/) suggests template strings with the [DOMPurify](https://www.npmjs.com/package/dompurify) package.
 
-For full details on preventing XSS attacks see the OWASP [cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+For full details on preventing XSS attacks see the [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)

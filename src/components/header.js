@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
 import { Link } from 'gatsby';
 import useSiteMetadata from '../hooks/useSiteMetadata';
 import { Location } from '@reach/router';
@@ -93,22 +94,21 @@ const StyledHeader = styled.header.attrs({
 
 const Header = () => {
   const { author } = useSiteMetadata();
+  const fadeIn = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 300 });
   const title = (
     <Location>
       {({ location }) => {
         const path = location.pathname;
         const root = path === '/';
-        console.log(root);
-
         const subtitle = path === '/' ? 'Web Developer' : 'Devbullets';
         return (
           <StyledHeader root={root}>
-            <div className='logo'>
+            <animated.div className='logo' style={fadeIn}>
               {' '}
               <Link to='/'>
                 <h1>{`${author} | ${subtitle}`}</h1>
               </Link>
-            </div>
+            </animated.div>
           </StyledHeader>
         );
       }}
