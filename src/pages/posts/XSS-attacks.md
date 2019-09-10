@@ -34,6 +34,12 @@ _Types of XSS attacks:_
 - The attackers code is not sent from the servers HTTP response object.
 - It is in the client side script at runtime.
 
+**Solutions in JavaScript:**
+
+- avoid use `innerHTML`
+- if you do **need** to use `innerHTML` sanitize[1] it
+- do use `textContent`
+
 **Solutions in React:**
 
 React takes care of a lot of client side security risks.
@@ -101,6 +107,28 @@ const removeXSSAttacks = html => {
 
 - [Carlos Santana](https://www.dev.education/blog/2019/01/22/preventing-xss-vulnerabilities-in-react) suggests the [serialize-javascript](https://www.npmjs.com/package/serialize-javascript) npm package to stringify instead of JSON.stringify.
 
+- [Chris Ferdinandi](https://gomakethings.com/preventing-cross-site-scripting-attacks-when-using-innerhtml-in-vanilla-javascript/) suggests a sanitizeHTML() function to remove unwanted characters.
+
+```js
+/*!
+ * Sanitize and encode all HTML in a user-submitted string
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {String} str  The user-submitted string
+ * @return {String} str  The sanitized string
+ */
+var sanitizeHTML = function(str) {
+  var temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
+};
+```
+
 - [Wes Bos](https://wesbos.com/sanitize-html-es6-template-strings/) suggests template strings with the [DOMPurify](https://www.npmjs.com/package/dompurify) package.
 
 For full details on preventing XSS attacks see the [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+
+[1] Sanitize
+
+- remove disallowed markup.
+- `<script>`, `<object>,` <`embed>`, and `<link>` are removed by the sanitization process.
+- also dangerous attributes like onclick.

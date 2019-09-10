@@ -21,12 +21,12 @@ const StyledContent = styled.div`
 `;
 const Content = () => (
   <StyledContent>
+    <Statement words='Lives by the code.' />
+    <Conduct />
     <Statement words='builds strong code.' />
     <HappyList />
     <Stone>What kind of person do you want to work with?</Stone>
     <MiniBio />
-    <Statement words='Lives by the code.' />
-    <Conduct />
     <Statement words='Keeps his tools sharp.' />
     <Tools
       id='tools'
