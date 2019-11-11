@@ -50,6 +50,44 @@ const Portfolio = () => (
     <StyledPortfolio>
       <h6>I made these</h6>
       <figure className='slide'>
+        <cite>Gatsby Blog Theme</cite>
+        <a
+          href='https://ip-blog1.netlify.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <img
+            className='slide__image'
+            src={images.gatsbyBlogTheme1}
+            alt='My Gatsby blog theme'
+          />
+        </a>
+        <figcaption>
+          I built a Gatsby theme with MDX, NetlifyCMS, Typography.js and
+          Emotion.js setup. Includes page transitions and animations.
+          <br />
+          <hr />
+          Javascript + React + Node + Gatsby + Emotion.js
+          <br />
+        </figcaption>
+        <div className='slide__linkbox'>
+          <a
+            href='https://ip-blog1.netlify.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Live
+          </a>
+          <a
+            href='https://github.com/isaacdpierce/gatsby-theme-blog1-ip'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Github
+          </a>
+        </div>
+      </figure>
+      <figure className='slide'>
         <cite>Beatscape</cite>
         <a
           href='https://beatscape.netlify.com/'
