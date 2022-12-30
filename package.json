@@ -16,7 +16,7 @@
     "@mdx-js/mdx": "^1.4.0",
     "@mdx-js/react": "^1.4.0",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.13.67",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-mdx": "^1.0.33",
     "gatsby-plugin-react-helmet": "^3.1.4",
     "gatsby-plugin-sharp": "^2.2.16",
